@@ -5,9 +5,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    message = os.environ.get("MESSAGE", "Bienvenue sur mon application Cloud !")
-    return f"<h1>{message}</h1><p>Application Flask déployée sur Render.</p><p>Version 1</p>"
+    Bienvenue sur mon application Cloud !
+Cette application Flask est développée avec GitHub Codespaces et déployée sur Render.
 
+Baies de serveurs dans un centre de données
+Image : Datacenter.jpg – Wikimedia Commons (source de l'image).
+
+Version 1
 @app.route("/api/health")
 def health():
     return jsonify(status="ok")
