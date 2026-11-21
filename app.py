@@ -5,13 +5,22 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    Bienvenue sur mon application Cloud !
-Cette application Flask est développée avec GitHub Codespaces et déployée sur Render.
+    message = os.environ.get(
+        "MESSAGE",
+        "Bienvenue sur mon application Cloud !"
+    )
+    return """
+    <h1>Bienvenue sur mon application Cloud !</h1>
+    <p>Cette application Flask est développée avec GitHub Codespaces et déployée sur Render.</p>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Datacenter.jpg"
+         alt="Baies de serveurs dans un centre de données"
+         width="500">
+    <p>Image : Datacenter.jpg -
+    <a href="https://commons.wikimedia.org/wiki/File:Datacenter.jpg">
+    Wikimedia Commons</a>.</p>
+    <p><strong>Version 1</strong></p>
+    """
 
-Baies de serveurs dans un centre de données
-Image : Datacenter.jpg – Wikimedia Commons (source de l'image).
-
-Version 1
 @app.route("/api/health")
 def health():
     return jsonify(status="ok")
