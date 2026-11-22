@@ -18,7 +18,7 @@ def home():
     <p>Image : Datacenter.jpg -
     <a href="https://commons.wikimedia.org/wiki/File:Datacenter.jpg">
     Wikimedia Commons</a>.</p>
-    <p><strong>Version 1</strong></p>
+    <p><strong>Version 2</strong></p>
     """
 
 @app.route("/api/health")
